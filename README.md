@@ -10,6 +10,22 @@ This library provides a simple JSON object which provides a machine readable spe
 
 > instagram["DELETE"]["/media/media-id/comments/comment-id"]
 
+##Sample response
+
+    {
+       url: "https://api.instagram.com/v1/users/{user-id}/media/recent",
+       headers: [],
+       body: [],
+       body_meaning: [],
+       body_optional: "",
+       params: ["access_token", "count", "max_stimestamp", "min_timestamp", "min_id", "max_id"],
+       params_meaning: ["A valid access token.", "Count of media to return.", "Return media before this UNIX timestamp.", "Return media after this UNIX timestamp.", "Return media later than this min_id.", "Return media earlier than this max_id."],
+       params_optional: "NYYYYY",
+       misc: ["You can use self instead of the user-id."],
+       authNeeded: "true"
+    }
+
+
 
 ##Contributing:
 
