@@ -1,0 +1,358 @@
+var instagram = {"GET": {
+                            "/users/search":
+                              {
+                                "url":"https://api.instagram.com/v1/users/search",
+                                "headers":[],
+                                "body":[],
+								"body_meaning":[],
+								"body_optional":"",
+                                "params":["access_token","q","count"],
+								"params_meaning":["A valid access token.","A query string.","Number of users to return."],
+								"params_optional":"NNY",
+                                "misc":[],
+								"authNeeded":"true"
+                              },
+                              "/users/self/media/like":
+                              {
+                                "url":"https://api.instagram.com/v1/users/self/media/liked",
+                                "headers":[],
+                                "body":[],
+								"body_meaning":[],
+								"body_optional":"",
+                                "params":["access_token","count","max_like_id"],
+								"params_meaning":["A valid access token.","Count of media to return.","Return media liked before this id."],
+								"params_optional":"NYY",
+								"misc":[],
+                                "authNeeded":"true"
+                              },
+							  "/users/user-id/media/recent":
+							  {
+							    "url":"https://api.instagram.com/v1/users/{user-id}/media/recent",
+                                "headers":[],
+                                "body":[],
+								"body_meaning":[],
+								"body_optional":"",
+                                "params":["access_token","count","max_timestamp","min_timestamp","min_id","max_id"],
+								"params_meaning":["A valid access token.","Count of media to return.","Return media before this UNIX timestamp.","Return media after this UNIX timestamp.","Return media later than this min_id.","Return media earlier than this max_id."],
+								"params_optional":"NYYYYY",
+								"misc": ["You can use self instead of the user-id."],
+                                "authNeeded":"true"
+							  },
+							  "/users/self/feed":
+							  {
+							    "url":"https://api.instagram.com/v1/users/self/feed",
+                                "headers":[],
+                                "body":[],
+								"body_meaning":[],
+								"body_optional":"",
+                                "params":["access_token","count","min_id","max_id"],
+								"params_meaning":["A valid access token.","Count of media to return.","Return media later than this min_id.","Return media earlier than this max_id."],
+								"params_optional":"NYYY",
+								"misc": [],
+                                "authNeeded":"true"
+							  },
+							  "/users/user-id":
+							  {
+							    "url":"https://api.instagram.com/v1/users/{user-id}",
+                                "headers":[],
+                                "body":[],
+								"body_meaning":[],
+								"body_optional":"",
+                                "params":["access_token"],
+								"params_meaning":["A valid access token."],
+								"params_optional":"N",
+								"misc": ["You can use self instead of the user-id."],
+                                "authNeeded":"true"
+							  },
+							  "/locations/location-id":
+							  {
+							    "url":"https://api.instagram.com/v1/locations/{location-id}",
+                                "headers":[],
+                                "body":[],
+								"body_meaning":[],
+								"body_optional":"",
+                                "params":["access_token"],
+								"params_meaning":["A valid access token."],
+								"params_optional":"N",
+								"misc": [],
+                                "authNeeded":"true"
+							  },
+							  "/locations/location-id/media/recent":
+							  {
+							    "url":"https://api.instagram.com/v1/locations/{location-id}/media/recent",
+                                "headers":[],
+                                "body":[],
+								"body_meaning":[],
+								"body_optional":"",
+                                "params":["access_token","max_timestamp","min_timestamp","min_id","max_id"],
+								"params_meaning":["A valid access token.","Return media before this UNIX timestamp.","Return media after this UNIX timestamp.","Return media later than this min_id.","Return media earlier than this max_id."],
+								"params_optional":"NYYYY",
+								"misc": [],
+                                "authNeeded":"true"
+							  },
+							  "/locations/search":
+							  {
+							    "url":"https://api.instagram.com/v1/locations/search",
+                                "headers":[],
+                                "body":[],
+								"body_meaning":[],
+								"body_optional":"",
+                                "params":["access_token","lat","lng","distance","facebook_places_id","foursquare_v2_id"],
+								"params_meaning":["A valid access token.","Latitude of the center search coordinate. If used, lng is required.","Longitude of the center search coordinate. If used, lat is required.","Default is 1000m (distance=1000), max distance is 5000.","Returns a location mapped off of a Facebook places id. If used, a Foursquare id and lat, lng are not required.","Returns a location mapped off of a foursquare v2 api location id. If used, you are not required to use lat and lng."],
+								"params_optional":"NYYYYY",
+								"misc": [],
+                                "authNeeded":"true"
+							  },
+							  "/geographies/geo-id/media/recent":
+							  {
+							    "url":"https://api.instagram.com/v1/geographies/{geo-id}/media/recent",
+                                "headers":[],
+                                "body":[],
+								"body_meaning":[],
+								"body_optional":"",
+                                "params":["client_id","count","min_id"],
+								"params_meaning":["A valid client id.","Max number of media to return.","Return media before this min_id."],
+								"params_optional":"NYY",
+								"misc": [],
+                                "authNeeded":"false"
+							  },
+							  "/tags/tag-name":
+							  {
+							    "url":"https://api.instagram.com/v1/tags/{tag-name}",
+                                "headers":[],
+                                "body":[],
+								"body_meaning":[],
+								"body_optional":"",
+                                "params":["access_token"],
+								"params_meaning":["A valid access token."],
+								"params_optional":"N",
+								"misc": [],
+                                "authNeeded":"true"
+							  },
+							  "/tags/tag-name/media/recent":
+							  {
+							    "url":"https://api.instagram.com/v1/tags/{tag-name}/media/recent",
+                                "headers":[],
+                                "body":[],
+								"body_meaning":[],
+								"body_optional":"",
+                                "params":["access_token","count","min_tag_id","max_tag_id"],
+								"params_meaning":["A valid access token.","Count of tagged media to return.","Return media before this min_tag_id.","Return media after this max_tag_id."],
+								"params_optional":"NYYY",
+								"misc": [],
+                                "authNeeded":"true"
+							  },
+							  "/tags/search":
+							  {
+							    "url":"https://api.instagram.com/v1/tags/search",
+                                "headers":[],
+                                "body":[],
+								"body_meaning":[],
+								"body_optional":"",
+                                "params":["access_token","q"],
+								"params_meaning":["A valid access token.","A valid tag name without a leading #. (eg. snowy, nofilter)"],
+								"params_optional":"NN",
+								"misc": [],
+                                "authNeeded":"true"
+							  },
+							  "/media/media-id/likes":
+							  {
+							    "url":"https://api.instagram.com/v1/media/{media-id}/likes",
+                                "headers":[],
+                                "body":[],
+                                "body_meaning":[],
+								"body_optional":"",
+								"params":["access_token"],
+								"params_meaning":["A valid access token."],
+								"params_optional":"N",
+								"misc": [],
+                                "authNeeded":"true"
+							  },
+							  "/media/media-id/comments":
+							  {
+							    "url":"https://api.instagram.com/v1/media/{media-id}}/comments",
+                                "headers":[],
+                                "body":[],
+                                "body_meaning":[],
+								"body_optional":"",
+								"params":["access_token"],
+								"params_meaning":["A valid access token."],
+								"params_optional":"N",
+								"misc": [],
+                                "authNeeded":"true"
+							  },
+							  "/media/media-id":
+							  {
+							    "url":"https://api.instagram.com/v1/media/{media-id}",
+                                "headers":[],
+                                "body":[],
+                                "body_meaning":[],
+								"body_optional":"",
+								"params":["access_token"],
+								"params_meaning":["A valid access token."],
+								"params_optional":"N",
+								"misc": [],
+                                "authNeeded":"true"
+							  },
+							  "/media/shortcode/shortcode":
+							  {
+							    "url":"https://api.instagram.com/v1/media/shortcode/D",
+                                "headers":[],
+                                "body":[],
+                                "body_meaning":[],
+								"body_optional":"",
+								"params":["access_token"],
+								"params_meaning":["A valid access token."],
+								"params_optional":"N",
+								"misc": [],
+                                "authNeeded":"true"
+							  },
+							  "/media/search":
+							  {
+							    "url":"https://api.instagram.com/v1/media/search",
+                                "headers":[],
+                                "body":[],
+                                "body_meaning":[],
+								"body_optional":"",
+								"params":["access_token","lat","lng","min_timestamp","max_timestamp","distance"],
+								"params_meaning":["A valid access token.","Latitude of the center search coordinate. If used, lng is required.","Longitude of the center search coordinate. If used, lat is required.","A unix timestamp. All media returned will be taken later than this timestamp.","A unix timestamp. All media returned will be taken earlier than this timestamp.","Default is 1km (distance=1000), max distance is 5km."],
+								"params_optional":"NNNYYY",
+								"misc": [],
+                                "authNeeded":"true"
+							  },
+							  "/media/popular":
+							  {
+							    "url":"https://api.instagram.com/v1/media/popular",
+                                "headers":[],
+                                "body":[],
+                                "body_meaning":[],
+								"body_optional":"",
+								"params":["access_token"],
+								"params_meaning":["A valid access token."],
+								"params_optional":"N",
+								"misc": [],
+                                "authNeeded":"true"
+							  },
+							  "/users/user-id/follows":
+							  {
+							    "url":"https://api.instagram.com/v1/users/{user-id}/follows",
+                                "headers":[],
+                                "body":[],
+                                "body_meaning":[],
+								"body_optional":"",
+								"params":["access_token"],
+								"params_meaning":["A valid access token."],
+								"params_optional":"N",
+								"misc": [],
+                                "authNeeded":"true"
+							  },
+							  "/users/user-id/followed-by":
+							  {
+							    "url":"https://api.instagram.com/v1/users/{user-id}/followed-by",
+                                "headers":[],
+                                "body":[],
+                                "body_meaning":[],
+								"body_optional":"",
+								"params":["access_token"],
+								"params_meaning":["A valid access token."],
+								"params_optional":"N",
+								"misc": [],
+                                "authNeeded":"true"
+							  },
+							  "/users/self/requested-by":
+							  {
+							    "url":"https://api.instagram.com/v1/users/self/requested-by",
+                                "headers":[],
+                                "body":[],
+                                "body_meaning":[],
+								"body_optional":"",
+								"params":["access_token"],
+								"params_meaning":["A valid access token."],
+								"params_optional":"N",
+								"misc": [],
+                                "authNeeded":"true"
+							  },
+							  "/users/user-id/relationship":
+							  {
+							    "url":"https://api.instagram.com/v1/users/{user-id}/relationship",
+                                "headers":[],
+                                "body":[],
+                                "body_meaning":[],
+								"body_optional":"",
+								"params":["access_token"],
+								"params_meaning":["A valid access token."],
+								"params_optional":"N",
+								"misc": [],
+                                "authNeeded":"true"
+							  }
+                        },
+                 "POST":{
+                              "/media/media-id/likes":
+							  {
+							    "url":"https://api.instagram.com/v1/media/{media-id}/likes",
+                                "headers":[],
+                                "body":["access_token"],
+								"body_meaning":["A valid access token"],
+								"body_optional":"N",
+                                "params":[],
+								"params_meaning":[],
+								"params_optional":"",
+								"misc": [],
+                                "authNeeded":"true"
+							  },
+							  "/media/media-id/comments":
+							  {
+							    "url":"https://api.instagram.com/v1/media/{media-id}/comments",
+                                "headers":[],
+                                "body":["access_token","text"],
+								"body_meaning":["A valid access token","Text to post as a comment on the media object as specified in media-id."],
+								"body_optional":"NN",
+                                "params":[],
+								"params_meaning":[],
+								"params_optional":"",
+								"misc": [],
+                                "authNeeded":"true"
+							  },
+							  "/users/user-id/relationship":
+							  {
+							    "url":"https://api.instagram.com/v1/users/{user-id}/relationship",
+                                "headers":[],
+                                "body":["access_token","action"],
+								"body_meaning":["A valid access token","One of follow/unfollow/block/unblock/approve/ignore."],
+								"body_optional":"NN",
+                                "params":[],
+								"params_meaning":[],
+								"params_optional":"",
+								"misc": [],
+                                "authNeeded":"true"
+							  }
+                        },
+				 "DELETE":{
+				             "/media/media-id/likes":
+							 {
+							    "url":"https://api.instagram.com/v1/media/{media-id}/likes",
+                                "headers":[],
+                                "body":[],
+								"body_meaning":[],
+								"body_optional":"",
+                                "params":["access_token"],
+								"params_meaning":["A valid access token"],
+								"params_optional":"N",
+								"misc": [],
+                                "authNeeded":"true"
+							 },
+							 "/media/media-id/comments/comment-id":
+							 {
+							    "url":"https://api.instagram.com/v1/media/{media-id}/comments/{comment-id}",
+                                "headers":[],
+                                "body":[],
+								"body_meaning":[],
+								"body_optional":"",
+                                "params":["access_token"],
+								"params_meaning":["A valid access token"],
+								"params_optional":"N",
+								"misc": [],
+                                "authNeeded":"true"
+							 }
+                        }				 
+                };
